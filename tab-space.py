@@ -27,7 +27,7 @@ def tab_to_space(path,space_length):
 		file_new_name="%s.bak"%(path)
 		os.rename(path,file_new_name)
 	except:
-		print("不能打开%s，可能是文件不存在或者无权限"%(path))
+		print("不能打开%s，可能是文件不存在或者无权限".decode("utf-8")%(path))
 		exit()
 	file=open("%s"%(path),"w")
 	for line in open(file_new_name,"r"):
@@ -41,7 +41,7 @@ def tab_to_space(path,space_length):
 			file.write("%s"%(i))
 	file.close()
 	print("\n\n")
-	print("        转换成功！旧文件保存在%s.bak"%(path))
+	print("        转换成功！旧文件保存在%s.bak".decode("utf-8")%(path))
 
 
 def space_to_tab(path,space_length):
@@ -49,7 +49,7 @@ def space_to_tab(path,space_length):
 		file_new_name="%s.bak"%(path)
 		os.rename(path,file_new_name)
 	except:
-		print("不能打开%s,可能是文件不存在或无权限"%(path))
+		print("不能打开%s,可能是文件不存在或无权限".decode("utf-8")%(path))
 		exit()
 	file=open("%s"%(path),"w")
 
@@ -69,7 +69,7 @@ def space_to_tab(path,space_length):
 
 	file.close()
 	print("\n\n")
-	print("        转换成功！旧文件保存在%s.bak"%(path))
+	print("        转换成功！旧文件保存在%s.bak".decode("utf-8")%(path))
 
 
 			
@@ -82,13 +82,13 @@ def space_to_tab(path,space_length):
 
 def main():
 	if len(sys.argv) <= 1 or sys.argv[1] == "-h":
-		print("使用帮助：")
-		print("    turn.py 文件名(必须) 转换方式(必须) 单级缩进的长度(非必须)")
-		print("    例如，把test.py中的空格缩进改为tab缩进：")
-		print('    turn.py "test.py" T')
-		print("    把test.py中的tab缩进改为tab缩进：")
-		print('    turn.py "test.py S')
-		print("    默认的单级缩进长度为4个空格，如果你想更改单级缩进的长度，可加上第3个参数，例如设置单级缩进长度为5个空格：")
+		print("使用帮助：".decode("utf-8"))
+		print("    turn.py 文件名(必须) 转换方式(必须) 单级缩进的长度(非必须)".decode("utf-8"))
+		print("    例如，把test.py中的space缩进改为tab缩进：".decode("utf-8"))
+		print('    turn.py "test.py" T'.decode("utf-8"))
+		print("    把test.py中的tab缩进改为space缩进：".decode("utf-8"))
+		print('    turn.py "test.py S'.decode("utf-8"))
+		print("    默认的单级缩进长度为4个空格，如果你想更改单级缩进的长度，可加上第3个参数，例如设置单级缩进长度为5个空格：".decode("utf-8"))
 		print('    turn.py "test.py" S 5')
 		exit()
 	else:
@@ -107,7 +107,7 @@ def main():
 
 
 		else:	
-			print("参数错误：请使用-h")
+			print("参数错误：请使用-h".decode("utf-8"))
 			exit()
 logo()
 
